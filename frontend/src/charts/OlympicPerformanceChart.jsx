@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useGetMedalsQuery } from "../store/api";
 import {
-  BarChart,
-  Bar,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -108,7 +108,7 @@ const OlympicPerformanceChart = () => {
   };
 
   return (
-    <div className="min-w-6xl mx-auto p-6 bg-neutral-900 text-white border border-neutral-700 rounded-lg shadow-xl">
+    <div className="min-w-5xl mx-auto p-6 bg-neutral-900 text-white border border-neutral-700 rounded-lg shadow-xl">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
         {/* Year Dropdown */}
         <div className="flex flex-col">
@@ -134,19 +134,31 @@ const OlympicPerformanceChart = () => {
           onClick={handleOpenModal}
           className="bg-(--olympiq-blue) hover:bg-yellow-500 text-neutral-900 px-4 py-2 rounded-full"
         >
-          Filter Countries {/* ({selectedCountries.length} selected) */}
+          Filter Countries
         </button>
       </div>
 
       {/* Chart */}
       <div className="h-[600px]">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart
+          <AreaChart
             data={filteredData}
             margin={{ top: 20, right: 30, left: 10, bottom: 100 }}
-            barCategoryGap="20%"
-            barGap="4%"
           >
+            <defs>
+              <linearGradient id="colorGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#FFB800" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#FFB800" stopOpacity={0} />
+              </linearGradient>
+              <linearGradient id="colorSilver" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#C0C0C0" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#C0C0C0" stopOpacity={0} />
+              </linearGradient>
+              <linearGradient id="colorBronze" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#CD7F32" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#CD7F32" stopOpacity={0} />
+              </linearGradient>
+            </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#444" />
             <XAxis
               dataKey="country"
@@ -181,25 +193,31 @@ const OlympicPerformanceChart = () => {
               }}
             />
             <Legend wrapperStyle={{ color: "#ccc" }} />
-            <Bar
+            <Area
+              type="monotone"
               dataKey="gold"
+
               stackId="a"
-              fill="#FFB800"  // Gold color update
+              fill="#FFB800"  // Gold color 
               animationDuration={500}
             />
-            <Bar
+            <Area
+              type="monotone"
               dataKey="silver"
+
               stackId="a"
-              fill="#C0C0C0"  // Silver color update
+              fill="#C0C0C0"  // Silver color 
               animationDuration={500}
             />
-            <Bar
+            <Area
+              type="monotone"
               dataKey="bronze"
+
               stackId="a"
-              fill="#CD7F32"  // Bronze color update
+              fill="#CD7F32"  // Bronze color 
               animationDuration={500}
             />
-          </BarChart>
+          </AreaChart>
         </ResponsiveContainer>
       </div>
 

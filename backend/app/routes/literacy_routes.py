@@ -5,7 +5,7 @@ import os
 router = APIRouter()
 
 # Update this path based on your actual file location
-data_file_path = "/Users/miheergautam/Documents/GitHub/OlympIQ/backend/app/data/processed/literacy_rate_cleaned.csv"
+data_file_path = "/Users/miheergautam/Documents/GitHub/OLYMPIQ-Visual-Analytics/backend/app/data/processed/literacy_rate_cleaned.csv"
 
 # Load the dataset
 try:

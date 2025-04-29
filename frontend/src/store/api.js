@@ -139,6 +139,11 @@ export const olympiqApi = createApi({
       query: ({ year, top_n = 10 }) =>
         `education-expenditure/top/${year}?top_n=${top_n}`,
     }),
+    // ----- Correlation -----
+    getCorrelation: builder.query({
+      query: ({ factor, medal_type, method }) =>
+        `correlation?factor=${factor}&medal_type=${medal_type}&method=${method}`,
+    }),
   }),
 });
 
@@ -205,4 +210,7 @@ export const {
   useGetEducationExpenditureByCountryQuery,
   useGetEducationExpenditureByYearQuery,
   useGetTopEducationExpenditureQuery,
+
+  // Correlation
+  useGetCorrelationQuery,
 } = olympiqApi;

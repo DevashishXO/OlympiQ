@@ -4,7 +4,7 @@ import numpy as np
 
 router = APIRouter()
 
-data_file_path = "/Users/miheergautam/Documents/GitHub/OlympIQ/backend/app/data/processed/urban_population_cleaned.csv"
+data_file_path = "/Users/miheergautam/Documents/GitHub/OLYMPIQ-Visual-Analytics/backend/app/data/processed/urban_population_cleaned.csv"
 data = pd.read_csv(data_file_path)
 
 # Replace NaN with None for JSON serialization

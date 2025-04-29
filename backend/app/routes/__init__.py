@@ -10,6 +10,9 @@ from .health_exp_routes import router as health_exp_router
 from .life_expectancy_routes import router as life_exp_router
 """ from .literacy_routes import router as literacy_router
  """
+from .correlation_routes import router as correlation_router
+
+
 router = APIRouter()
 router.include_router(medal_router)
 router.include_router(gdp_router)
@@ -22,3 +25,4 @@ router.include_router(health_exp_router)
 router.include_router(life_exp_router)
 """ router.include_router(literacy_router)
  """
+router.include_router(correlation_router)

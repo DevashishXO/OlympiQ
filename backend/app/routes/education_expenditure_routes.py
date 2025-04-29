@@ -4,7 +4,7 @@ import pandas as pd
 router = APIRouter()
 
 # Load the Education Expenditure dataset
-edu_exp_path = "/Users/miheergautam/Documents/GitHub/OlympIQ/backend/app/data/processed/education_expenditure_cleaned.csv" 
+edu_exp_path = "/Users/miheergautam/Documents/GitHub/OLYMPIQ-Visual-Analytics/backend/app/data/processed/education_expenditure_cleaned.csv" 
 edu_data = pd.read_csv(edu_exp_path)
 
 @router.get("/education-expenditure")

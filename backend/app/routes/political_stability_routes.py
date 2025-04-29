@@ -4,7 +4,7 @@ import pandas as pd
 router = APIRouter()
 
 
-data_file_path = "/Users/miheergautam/Documents/GitHub/OlympIQ/backend/app/data/processed/political_stability_cleaned.csv"
+data_file_path = "/Users/miheergautam/Documents/GitHub/OLYMPIQ-Visual-Analytics/backend/app/data/processed/political_stability_cleaned.csv"
 data = pd.read_csv(data_file_path)
 
 @router.get("/stability")

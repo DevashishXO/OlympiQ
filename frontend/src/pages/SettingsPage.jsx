@@ -1,4 +1,3 @@
-// SettingsPage.jsx
 import React from "react";
 
 const SettingsPage = () => {

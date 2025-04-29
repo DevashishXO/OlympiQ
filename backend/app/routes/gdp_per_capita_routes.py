@@ -4,7 +4,7 @@ import pandas as pd
 router = APIRouter()
 
 # Load the GDP per capita dataset
-gdp_pc_file_path = "/Users/miheergautam/Documents/GitHub/OlympIQ/backend/app/data/processed/gdp_per_capita_cleaned.csv"  
+gdp_pc_file_path = "/Users/miheergautam/Documents/GitHub/OLYMPIQ-Visual-Analytics/backend/app/data/processed/gdp_per_capita_cleaned.csv"  
 gdp_data = pd.read_csv(gdp_pc_file_path)
 
 gdp_data.rename(columns={"Country Name": "Country"}, inplace=True)
